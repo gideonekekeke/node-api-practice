@@ -24,8 +24,9 @@ mongoose.connection
   });
 
 app.use(express.json());
+app.use(express.static("public"));
 app.use("/api/users", Upload);
-app.use(express.static(public));
+
 app.get("index.html");
 app.use("/api", callRoute);
 
