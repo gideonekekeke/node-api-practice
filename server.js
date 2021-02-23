@@ -2,7 +2,9 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
+const { imageUpload } = require("./controller/controller");
 const port = 8080;
+const callRoute = require("./router/router");
 
 const app = express();
 
@@ -20,6 +22,10 @@ mongoose.connection
   .on("error", () => {
     console.log("there is a big fatal error here");
   });
+
+app.use(express.json());
+app.use("/api/users", imageUpload);
+app.use("/api", callRoute);
 
 app.listen(process.env.PORT, () => {
   console.log("listening");
