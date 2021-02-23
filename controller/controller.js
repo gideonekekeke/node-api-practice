@@ -5,14 +5,14 @@ const multer = require("multer");
 
 const storage = multer.diskStorage({
   destination: function (req, res, cb) {
-    cb(null, "./uploads");
+    cb(null, "./image");
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname);
   },
 });
 
-const imageUpload = multer({ storage: storage }).single("picture");
+const Upload = multer({ storage: storage }).single("picture");
 
 //creating all the get, post, put, delete functions
 
@@ -71,5 +71,5 @@ module.exports = {
   gettingID,
   deleteStudent,
   delectingAll,
-  imageUpload,
+  Upload,
 };

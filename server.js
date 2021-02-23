@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-const { imageUpload } = require("./controller/controller");
+const { Upload } = require("./controller/controller");
 const port = 8080;
 const callRoute = require("./router/router");
 
@@ -24,7 +24,7 @@ mongoose.connection
   });
 
 app.use(express.json());
-app.use("/api/users", imageUpload);
+app.use("/api/users", Upload);
 app.use("/api", callRoute);
 
 app.listen(process.env.PORT, () => {
