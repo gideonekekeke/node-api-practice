@@ -11,9 +11,11 @@ const newSchema = mongoose.Schema({
     required: true,
   },
 
-  photo: {
+  picture: {
     type: String,
   },
 });
 
-module.exports = mongoose.model("usersModel", newSchema);
+const usersModel = mongoose.model("usersModel", newSchema);
+
+module.exports = usersModel;
