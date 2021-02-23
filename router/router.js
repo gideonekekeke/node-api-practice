@@ -5,7 +5,7 @@ const {
   gettingID,
   deleteStudent,
   delectingAll,
-  imageUpload,
+  Upload,
 } = require("../controller/controller");
 
 const router = express.Router();
