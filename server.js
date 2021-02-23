@@ -25,6 +25,8 @@ mongoose.connection
 
 app.use(express.json());
 app.use("/api/users", Upload);
+app.use(express.static(public));
+app.get("index.html");
 app.use("/api", callRoute);
 
 app.listen(process.env.PORT, () => {
